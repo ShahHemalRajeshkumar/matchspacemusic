@@ -108,8 +108,6 @@ module.exports = withBundleAnalyzer({
       },
     };
 
-
-
     return config;
   },
 });

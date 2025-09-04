@@ -102,7 +102,8 @@ function OrganizationCard({
                     className={cx(
                       'w-full max-w-[56px] sm:max-w-[100px] h-[56px] sm:h-[100px] overflow-hidden rounded-full ml-[-7%] sm:ml-[-3%] flex items-center justify-center relative',
                       Styles.card_teacher_wrapper
-                    )}>
+                    )}
+                    style={{ aspectRatio: '1/1', minWidth: '56px', minHeight: '56px' }}>
                      <Image
                       src={teacher || '/assets/images/teacherdefault.avif'}
                       alt='teacher image'
@@ -112,6 +113,8 @@ function OrganizationCard({
                       loading='lazy'
                       priority={false}
                       placeholder='blur'
+                      sizes='100px'
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
                     />
                   </div>

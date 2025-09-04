@@ -69,19 +69,20 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
       className='grid smd:grid-cols-[0.8fr_2fr] w-full gap-[12px] sm:gap-3 lg:gap-6 border-0 sm:border-[1px] border-[#d0d5dd] rounded-lg sm:pl-[12px] pr-[12px] lg:pr-[20px] py-[16px] cursor-pointer'
       onClick={courseHandle}>
       <div className=' w-full max-w-full smd:max-w-[240px] '>
-        <div className='w-full max-w-full smd:max-w-[240px] h-[190px] lg:h-[160px] [&>span]:!h-full  [&>span]:!w-full relative overflow-hidden rounded-lg'>
+        <div className='w-full max-w-full smd:max-w-[240px] h-[190px] lg:h-[160px] [&>span]:!h-full  [&>span]:!w-full relative overflow-hidden rounded-lg' style={{ aspectRatio: '240/160' }}>
           {!!item?.instrument?.image_url ? (
             <Image
               layout='fixed'
               objectFit='cover'
               src={item?.instrument?.image_url}
-              width={500}
-              height={500}
+              width={240}
+              height={160}
               alt={`${item?.name} course image`}
               className='!w-full max-w-full lg:!max-w-[240px] h-auto rounded-lg'
               loading='lazy'
               priority={false}
               placeholder='blur'
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 240px'
               blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
             />
           ) : (

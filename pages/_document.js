@@ -24,8 +24,10 @@ export default class CustomDocument extends Document {
           {this.props.styleTags}
           {/** Add Google fonts and Preconnect to Google Servers - Next JS will add Optimizations automatically  */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
           <link rel='preconnect' href='https://www.googletagmanager.com' />
+          <link rel='preload' href='/assets/fonts/ms_instruments.woff' as='font' type='font/woff' crossOrigin='anonymous' />
+          <link rel='preload' href='/assets/fonts/Roboto/Roboto-Regular.ttf' as='font' type='font/ttf' crossOrigin='anonymous' />
 
           <link
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
@@ -41,6 +43,28 @@ export default class CustomDocument extends Document {
                   font-weight: 400;
                   font-display: swap;
                   src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v95/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUcel5euIg.woff2) format('woff2');
+                }
+                @font-face {
+                  font-family: 'ms_instruments';
+                  font-style: normal;
+                  font-weight: normal;
+                  font-display: swap;
+                  src: url('/assets/fonts/ms_instruments.woff') format('woff'),
+                       url('/assets/fonts/ms_instruments.ttf') format('truetype');
+                  size-adjust: 100%;
+                  ascent-override: 90%;
+                  descent-override: 22%;
+                  line-gap-override: 0%;
+                }
+                @font-face {
+                  font-family: 'Roboto-fallback';
+                  font-style: normal;
+                  font-weight: 400;
+                  src: local('Arial');
+                  ascent-override: 92.49%;
+                  descent-override: 24.34%;
+                  line-gap-override: 0%;
+                  size-adjust: 107.4%;
                 }
                 .material-icons-outlined {
                   font-family: 'Material Icons Outlined';
