@@ -42,9 +42,17 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 5000);
+    }, 2000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('react-dom').then(() => {
+        setIsLoaded(true);
+      });
+    }
   }, []);
 
   return (
@@ -70,7 +78,6 @@ const MyApp = ({ Component, pageProps }) => {
           }}
         />
       )}
-      {/* End Google Tag Manager */}
       <ErrorBoundary>
         <Component {...pageProps} />
       </ErrorBoundary>

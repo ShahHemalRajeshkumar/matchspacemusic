@@ -1,28 +1,30 @@
-import ArrowLeft from '../icons/ArrowLeft';
-import ArrowRight from '../icons/ArrowRight';
-import Accordion from '../icons/Accordion';
-import Drums from '../icons/Drums';
-import Flute from '../icons/Flute';
-import Guitar from '../icons/Guitar';
-import Singing from '../icons/Singing';
-import Ukulele from '../icons/Ukulele';
-import Violin from '../icons/Violin';
-import Violoncello from '../icons/Violoncello';
-import Piano from '../icons/Piano';
-import Location2 from '../icons/Location2';
-import Teacher from '../icons/Teacher';
-import ThumbsUp from '../icons/ThumbsUp';
-import CertifiedMusican from '../icons/CertifiedMusican'
-import QualifiedMusician from '../icons/QualifiedMusician'
-import Keyboard from '../icons/Keyboard';
-import Recorder from '../icons/Recorder'
-import ElectricGuitar from '../icons/ElectricGuitar'
-import Blog from '../icons/Blog'
-import Innosuisse from '../icons/Innosuisse'
-import Clarinet from '../icons/Clarinet';
-import TransverseFlute from '../icons/TransverseFlute';
-import Saxophone from '../icons/Saxophone';
-import LocationPink from '../icons/LocationPink';
+import dynamic from 'next/dynamic';
+
+const ArrowLeft = dynamic(() => import('../icons/ArrowLeft'), { ssr: false });
+const ArrowRight = dynamic(() => import('../icons/ArrowRight'), { ssr: false });
+const Accordion = dynamic(() => import('../icons/Accordion'), { ssr: false });
+const Drums = dynamic(() => import('../icons/Drums'), { ssr: false });
+const Flute = dynamic(() => import('../icons/Flute'), { ssr: false });
+const Guitar = dynamic(() => import('../icons/Guitar'), { ssr: false });
+const Singing = dynamic(() => import('../icons/Singing'), { ssr: false });
+const Ukulele = dynamic(() => import('../icons/Ukulele'), { ssr: false });
+const Violin = dynamic(() => import('../icons/Violin'), { ssr: false });
+const Violoncello = dynamic(() => import('../icons/Violoncello'), { ssr: false });
+const Piano = dynamic(() => import('../icons/Piano'), { ssr: false });
+const Location2 = dynamic(() => import('../icons/Location2'), { ssr: false });
+const Teacher = dynamic(() => import('../icons/Teacher'), { ssr: false });
+const ThumbsUp = dynamic(() => import('../icons/ThumbsUp'), { ssr: false });
+const CertifiedMusican = dynamic(() => import('../icons/CertifiedMusican'), { ssr: false });
+const QualifiedMusician = dynamic(() => import('../icons/QualifiedMusician'), { ssr: false });
+const Keyboard = dynamic(() => import('../icons/Keyboard'), { ssr: false });
+const Recorder = dynamic(() => import('../icons/Recorder'), { ssr: false });
+const ElectricGuitar = dynamic(() => import('../icons/ElectricGuitar'), { ssr: false });
+const Blog = dynamic(() => import('../icons/Blog'), { ssr: false });
+const Innosuisse = dynamic(() => import('../icons/Innosuisse'), { ssr: false });
+const Clarinet = dynamic(() => import('../icons/Clarinet'), { ssr: false });
+const TransverseFlute = dynamic(() => import('../icons/TransverseFlute'), { ssr: false });
+const Saxophone = dynamic(() => import('../icons/Saxophone'), { ssr: false });
+const LocationPink = dynamic(() => import('../icons/LocationPink'), { ssr: false });
 
 export const icons = {
     arrowLeft: ArrowLeft,

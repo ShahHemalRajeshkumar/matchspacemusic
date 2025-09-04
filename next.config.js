@@ -75,6 +75,12 @@ module.exports = withBundleAnalyzer({
   eslint : {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    optimizeCss: true,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   staticPageGenerationTimeout: 10000,
   reactStrictMode: true,
   async rewrites() {
@@ -91,6 +97,17 @@ module.exports = withBundleAnalyzer({
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     });
+
+    config.optimization.splitChunks = {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    };
 
     return config;
   },
