@@ -69,15 +69,14 @@ module.exports = withBundleAnalyzer({
       'url.to'
     ],
     deviceSizes: [600, 960, 1280, 1440, 1920],
-    formats: ['image/webp'],
+    formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
+
   },
   eslint : {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    optimizeCss: true,
-  },
+
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
@@ -108,6 +107,8 @@ module.exports = withBundleAnalyzer({
         },
       },
     };
+
+
 
     return config;
   },

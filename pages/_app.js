@@ -7,6 +7,7 @@ import '../components/InstrumentComponents/styles.scss';
 import '../components/evta/styles.scss';
 import '../styles/NewDesigns/langToggle.scss';
 
+import Head from 'next/head';
 import Script from 'next/script';
 import Bugsnag from '@bugsnag/js';
 import React, { useEffect, useState } from 'react';
@@ -57,11 +58,15 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+      </Head>
       {/* Google Tag Manager */}
       <link rel='preconnect' href='https://www.googletagmanager.com' />
       {isLoaded && (
         <Script
           id='google-tag-manager'
+          strategy='lazyOnload'
           dangerouslySetInnerHTML={{
             __html: `
           (function(w, d, s, l, i){

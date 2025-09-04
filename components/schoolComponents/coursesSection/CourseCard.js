@@ -79,6 +79,10 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
               height={500}
               alt={`${item?.name} course image`}
               className='!w-full max-w-full lg:!max-w-[240px] h-auto rounded-lg'
+              loading='lazy'
+              priority={false}
+              placeholder='blur'
+              blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
             />
           ) : (
             <div className='rounded-lg w-full max-w-full sm:!max-w-[288px] !h-[182px] bg-gray-200'></div>
@@ -110,14 +114,14 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
                           </div>
                         </div>
                         <p className='text-[12px] font-Roboto leading-[90%] text-[#002D3B] font-semibold mt-[8px]'>
-                          {/* {getKidsAndAdultsLabel(lowestAndHighest[0], language)} */}
+                          
                           {item?.min_prices?.kids?.price
                             ? `${translateENtoDE('for kids and young adults', language)}`
                             : null}
                         </p>
                       </div>
                     ) : null}
-                    {/* Check if highest price exists and is different from the lowest */}
+                   
                     {item?.min_prices?.adults?.price ? (
                       <div className='h-fit block smd:hidden w-full'>
                         <div className='flex items-start gap-1 '>
@@ -153,7 +157,6 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
         <div className='w-full h-[100%] flex flex-col justify-between'>
           <div>
             <p className='text-[14px] font-semibold font-Roboto text-[#000000DE] mb-[2px]'>
-              {/* {translateENtoDE('Music lessons', language)} */}
               {category?.type_name[language == 'ch-en' ? 'en' : 'de']}
             </p>
             <h3 ref={titleRef} className='text-[17px] font-bold text-[#000000DE] font-Roboto leading-[129%]'>
@@ -161,7 +164,6 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
             </h3>
             <div className='flex flex-wrap items-center gap-[6px] mt-[12px] sm:mt-[8px]'>
               <div className='flex items-center gap-[6px] py-[3px] px-[6px] bg-[#F2F4F7] rounded-[4px]'>
-                {/* <CourseInstrumentIcon className='w-[20px] h-[20px]' /> */}
                 <SmallMusic className='w-[20px] h-[20px]' />
                 <span className='text-[#000000AD] text-[12px] lg:text-[14px] leading-[110%] font-medium'>
                   {language === 'ch-en' ? item?.instrument?.en : item?.instrument?.de}
@@ -178,7 +180,6 @@ const CourseCard = React.memo(({ item, teacher, language, onClick, imageSize, se
               </div>
               {item?.durations.length > 0 ? (
                 <div className='flex items-center gap-[6px] py-[3px] px-[6px] bg-[#F2F4F7] rounded-[4px]'>
-                  {/* here we set time */}
                   <SmallClock className='w-[20px] h-[20px]' />
                   <div className='text-[#000000AD] text-[12px] lg:text-[14px] leading-[110%] font-medium'>
                     {item?.durations.length > 1

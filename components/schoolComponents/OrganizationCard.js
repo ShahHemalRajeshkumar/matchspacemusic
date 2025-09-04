@@ -103,11 +103,16 @@ function OrganizationCard({
                       'w-full max-w-[56px] sm:max-w-[100px] h-[56px] sm:h-[100px] overflow-hidden rounded-full ml-[-7%] sm:ml-[-3%] flex items-center justify-center relative',
                       Styles.card_teacher_wrapper
                     )}>
-                     <img
+                     <Image
                       src={teacher || '/assets/images/teacherdefault.avif'}
                       alt='teacher image'
-                      layout='intrinsic'
+                      width={100}
+                      height={100}
                       className='rounded-full object-cover'
+                      loading='lazy'
+                      priority={false}
+                      placeholder='blur'
+                      blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
                     />
                   </div>
                 }
@@ -136,6 +141,10 @@ function OrganizationCard({
               onError={onError}
               src={item.avatar_path}
               className={cx('rounded-full teacher-card-img  w-full !max-w-[80px] !h-[80px] object-contain')}
+              loading='lazy'
+              priority={false}
+              placeholder='blur'
+              blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
             />
           ) : (
             <div className='w-[56px] sm:w-[100px] aspect-square overflow-hidden rounded-full border-2 border-white ml-[-7%] sm:ml-[-3%] flex items-center justify-center relative'>
