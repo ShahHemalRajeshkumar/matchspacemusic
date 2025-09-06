@@ -65,7 +65,7 @@ const MyApp = ({ Component, pageProps }) => {
       <link rel='preconnect' href='https://www.googletagmanager.com' />
       <Script
         id='google-tag-manager'
-        strategy='lazyOnload'
+        strategy='worker'
         src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
         onLoad={() => {
           if (typeof window !== 'undefined') {
