@@ -35,6 +35,8 @@ export default class CustomDocument extends Document {
           <link rel='preload' href='/assets/fonts/Roboto/Roboto-Regular.ttf' as='font' type='font/ttf' crossOrigin='anonymous' />
           <link rel='preload' href='https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
           <link rel='preload' href='https://fonts.gstatic.com/s/materialiconsoutlined/v95/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUcel5euIg.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
+          <link rel='modulepreload' href='/_next/static/chunks/react.js' />
+          <link rel='modulepreload' href='/_next/static/chunks/main.js' />
 
           <link
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'

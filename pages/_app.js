@@ -43,7 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -65,7 +65,7 @@ const MyApp = ({ Component, pageProps }) => {
       <link rel='preconnect' href='https://www.googletagmanager.com' />
       <Script
         id='google-tag-manager'
-        strategy='afterInteractive'
+        strategy='lazyOnload'
         src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
         onLoad={() => {
           if (typeof window !== 'undefined') {

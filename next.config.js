@@ -80,6 +80,7 @@ module.exports = withBundleAnalyzer({
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  swcMinify: true,
 
   staticPageGenerationTimeout: 10000,
   reactStrictMode: true,
@@ -100,11 +101,19 @@ module.exports = withBundleAnalyzer({
 
     config.optimization.splitChunks = {
       chunks: 'all',
+      maxSize: 200000,
       cacheGroups: {
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'react',
+          chunks: 'all',
+          priority: 10,
+        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
+          priority: 5,
         },
       },
     };
