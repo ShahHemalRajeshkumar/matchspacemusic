@@ -13,7 +13,6 @@ import Bugsnag from '@bugsnag/js';
 import React, { useEffect, useState } from 'react';
 import BugsnagPluginReact from '@bugsnag/plugin-react';
 import BugsnagPerformance from '@bugsnag/browser-performance';
-import { LayoutStability } from '../components/LayoutStability';
 
 if (!Bugsnag._client) {
   Bugsnag.start({
@@ -84,7 +83,6 @@ const MyApp = ({ Component, pageProps }) => {
           }}
         />
       )}
-      <LayoutStability />
       <ErrorBoundary>
         <Component {...pageProps} />
       </ErrorBoundary>

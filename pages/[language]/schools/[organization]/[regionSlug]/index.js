@@ -171,7 +171,7 @@ function SchoolData({
   initialTeachersData,
   initialCourseData,
   initialInstrumentsData,
-  metadata, // Receive metadata from props
+  metadata, 
   language,
   organization,
   regionSlug,

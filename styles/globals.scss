@@ -675,17 +675,6 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   font-family: "Roboto", "Roboto-fallback", "Arial", sans-serif;
 }
 
-/* Container stability */
-.w-full.max-w-\[1280px\].xl\:max-w-\[1440px\] {
-  min-height: 1px;
-}
 
-/* Course section stability */
-#courses {
-  min-height: 200px;
-}
 
-/* Navigation stability */
-.flex.items-center.hidden.lg\:flex {
-  min-height: 40px;
-}
+
