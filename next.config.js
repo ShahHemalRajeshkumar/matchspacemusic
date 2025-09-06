@@ -80,12 +80,7 @@ module.exports = withBundleAnalyzer({
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  swcMinify: true,
-  experimental: {
-    optimizeCss: true,
-    esmExternals: true,
-  },
-  poweredByHeader: false,
+
 
   staticPageGenerationTimeout: 10000,
   reactStrictMode: true,
@@ -106,32 +101,11 @@ module.exports = withBundleAnalyzer({
 
     config.optimization.splitChunks = {
       chunks: 'all',
-      minSize: 20000,
-      maxSize: 150000,
       cacheGroups: {
-        react: {
-          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-          name: 'react',
-          chunks: 'all',
-          priority: 20,
-        },
-        algolia: {
-          test: /[\\/]node_modules[\\/](algoliasearch|react-instantsearch)[\\/]/,
-          name: 'algolia',
-          chunks: 'async',
-          priority: 15,
-        },
-        mapbox: {
-          test: /[\\/]node_modules[\\/](mapbox-gl|react-map-gl)[\\/]/,
-          name: 'mapbox',
-          chunks: 'async',
-          priority: 12,
-        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
-          priority: 5,
         },
       },
     };

@@ -244,8 +244,7 @@ export async function getStaticPaths({ params }) {
     if (
       res?.data.links[linkKey].is_folder ||
       res?.data.links[linkKey].slug === '/' ||
-      link.slug.includes('global/navigation') ||
-      link.slug.includes('test/navigation')
+      link.slug.includes('global/navigation')
     ) {
       return;
     }
@@ -265,6 +264,16 @@ export async function getStaticPaths({ params }) {
       paths.push({ params: { language, slug: segments } });
     }
   });
+  
+  // Add test routes to prevent lambda errors
+  const testInstruments = ['violin', 'piano', 'guitar', 'drums', 'singing'];
+  testInstruments.forEach(instrument => {
+    paths.push(
+      { params: { language: 'ch-en', slug: ['test', instrument] } },
+      { params: { language: 'ch-de', slug: ['test', instrument] } }
+    );
+  });
+  
   return { paths, fallback: 'blocking' };
 }
 
