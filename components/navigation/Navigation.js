@@ -32,7 +32,7 @@ const Navigation = ({
   const router = useRouter();
 
   const [show] = showForm;
-  const blok = story?.body?.filter((comp) => comp.component === 'global_reference')[0].reference;
+  const blok = story?.body?.filter((comp) => comp.component === 'global_reference')[0]?.reference || { content: { header: [] } };
 
   const clickMenu = (clickedHeader) => {
     setClickedHeader(clickedHeader.name);
@@ -73,7 +73,7 @@ const Navigation = ({
 
   const currentPath = normalizePath(router.asPath);
 
-  const updatedHeaders = blok.content.header.map((header) => {
+  const updatedHeaders = (blok?.content?.header || []).map((header) => {
     header.show = false;
     header.active = false;
 
@@ -230,13 +230,13 @@ const Navigation = ({
                   type='button'
                   onClick={() => loginSignup('login')}
                   className='mr-4 lg:!px-3 min-[1480px]:!px-11 tracking-widest border-2 btn-outline'>
-                  {blok.content.log_in}
+                  {blok?.content?.log_in || 'LOGIN'}
                 </button>
                 <button
                   type='button'
                   onClick={() => loginSignup('signup')}
                   className='tracking-widest lg:!px-3 min-[1480px]:!px-11 btn-primary bg-primary'>
-                  {blok.content.registers}
+                  {blok?.content?.registers || 'REGISTER'}
                 </button>
               </div>
             </div>

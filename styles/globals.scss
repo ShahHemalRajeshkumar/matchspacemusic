@@ -675,19 +675,6 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   font-family: "Roboto", "Roboto-fallback", "Arial", sans-serif;
 }
 
-/* Performance optimizations */
-script[src*="hotjar"] {
-  loading: lazy;
-}
-
-script[src*="elfsight"] {
-  loading: lazy;
-}
-
-script[src*="cloudfront"] {
-  loading: lazy;
-}
-
 
 
 

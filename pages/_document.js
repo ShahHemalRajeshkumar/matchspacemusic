@@ -31,12 +31,9 @@ export default class CustomDocument extends Document {
           <link rel='dns-prefetch' href='//script.hotjar.com' />
           <link rel='dns-prefetch' href='//connect.facebook.net' />
           <link rel='dns-prefetch' href='//universe-static.elfsightcdn.com' />
-          <link rel='preload' href='/assets/fonts/ms_instruments.woff' as='font' type='font/woff' crossOrigin='anonymous' />
-          <link rel='preload' href='/assets/fonts/Roboto/Roboto-Regular.ttf' as='font' type='font/ttf' crossOrigin='anonymous' />
+
           <link rel='preload' href='https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
           <link rel='preload' href='https://fonts.gstatic.com/s/materialiconsoutlined/v95/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUcel5euIg.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
-          <link rel='modulepreload' href='/_next/static/chunks/react.js' />
-          <link rel='modulepreload' href='/_next/static/chunks/main.js' />
 
           <link
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'
@@ -58,11 +55,11 @@ export default class CustomDocument extends Document {
                   font-style: normal;
                   font-weight: normal;
                   font-display: swap;
-                  src: url('/assets/fonts/ms_instruments.woff') format('woff'),
-                       url('/assets/fonts/ms_instruments.ttf') format('truetype');
+                  src: url('../assets/fonts/ms_instruments.woff') format('woff'),
+                       url('../assets/fonts/ms_instruments.ttf') format('truetype');
                   size-adjust: 100%;
-                  ascent-override: 90%;
-                  descent-override: 22%;
+                  ascent-override: 85%;
+                  descent-override: 20%;
                   line-gap-override: 0%;
                 }
                 @font-face {

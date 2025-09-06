@@ -4,9 +4,9 @@ import FooterTopBar from './FooterTopBar/FooterTopBar';
 import FooterBottomBar from './FooterBottomBar/FooterBottomBar';
 
 const Footer = ({ story, isTeacherInfoPage }) => {
-  const blok = story?.body.filter((comp) => comp.component === 'global_reference')[0].reference;
+  const blok = story?.body?.filter((comp) => comp.component === 'global_reference')[0]?.reference || { full_slug: 'ch-en', content: { footer: {} } };
 
-  let language = blok.full_slug;
+  let language = blok?.full_slug || 'ch-en';
 
   if (language.includes('ch-de')) {
     language = 'ch-de';
