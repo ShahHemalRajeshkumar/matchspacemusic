@@ -80,6 +80,7 @@ module.exports = withBundleAnalyzer({
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+
   staticPageGenerationTimeout: 10000,
   reactStrictMode: true,
   async rewrites() {

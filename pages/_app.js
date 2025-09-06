@@ -43,7 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -63,26 +63,17 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       {/* Google Tag Manager */}
       <link rel='preconnect' href='https://www.googletagmanager.com' />
-      {isLoaded && (
-        <Script
-          id='google-tag-manager'
-          strategy='lazyOnload'
-          dangerouslySetInnerHTML={{
-            __html: `
-          (function(w, d, s, l, i){
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(),event:'gtm.js' });
-            var f = d.getElementsByTagName(s)[0];
-            var j = d.createElement(s);
-            var dl = l != 'dataLayer' ? '&l='+l : '';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-          })(window, document, 'script', 'dataLayer', '${process.env.GOOGLE_TAG_MANAGER_ID}');
-        `,
-          }}
-        />
-      )}
+      <Script
+        id='google-tag-manager'
+        strategy='afterInteractive'
+        src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
+        onLoad={() => {
+          if (typeof window !== 'undefined') {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          }
+        }}
+      />
       <ErrorBoundary>
         <Component {...pageProps} />
       </ErrorBoundary>
