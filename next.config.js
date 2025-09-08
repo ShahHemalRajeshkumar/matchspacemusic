@@ -80,13 +80,12 @@ module.exports = withBundleAnalyzer({
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  experimental: {
-    optimizeCss: true,
-  },
+
 
 
   staticPageGenerationTimeout: 10000,
   reactStrictMode: true,
+  target: 'serverless',
   async rewrites() {
     return [
       {
