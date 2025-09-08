@@ -85,7 +85,6 @@ module.exports = withBundleAnalyzer({
 
   staticPageGenerationTimeout: 10000,
   reactStrictMode: true,
-  target: 'serverless',
   async rewrites() {
     return [
       {
@@ -100,19 +99,6 @@ module.exports = withBundleAnalyzer({
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     });
-
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-        },
-      };
-    }
 
     return config;
   },
