@@ -264,14 +264,14 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
         <link
           rel="preload"
           as="image"
-          href="/assets/images/schollbg.webp"
+          href="/assets/images/schollbg1.webp"
           type="image/webp"
         />
       </Head>
     <div>
       <div className='w-full max-w-[1440px] mx-auto  sm:mt-[24.5px] h-[141px] xs:h-[180px] sm:h-[280px]  [&>span]:!h-full pt-4 sm:pt-0 relative rounded-xl px-[8px]'>
         <Image
-          src='/assets/images/schollbg.webp'
+          src='/assets/images/schollbg1.webp'
           alt='School background'
           width={1440}
           height={280}
