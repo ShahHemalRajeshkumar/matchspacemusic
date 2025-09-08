@@ -4,7 +4,7 @@ import FooterLogoSection from './FooterLogoSection/FooterLogoSection';
 import FooterOtherData from './FooterOtherData/FooterOtherData';
 
 const FooterTopBar = ({language, isTeacherInfoPage, footerData, blok }) => {
-  const [footerLogoSection, ...otherFooterData] = footerData;
+  const [footerLogoSection, ...otherFooterData] = footerData || [];
 
   return (
     <div className='contain w-full flex flex-col lg:grid lg:grid-cols-4 lg:gap-6 py-10'>

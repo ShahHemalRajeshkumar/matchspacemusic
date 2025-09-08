@@ -278,8 +278,10 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
           className='w-full object-cover rounded-xl m-0 h-[130px] sm:h-[280px]'
           priority
           fetchPriority='high'
-          placeholder="blur" 
-          blurDataURL='/assets/images/schollbg1.jpg'
+          quality={85}
+          sizes='(max-width: 640px) 100vw, (max-width: 1440px) 100vw, 1440px'
+          placeholder='blur'
+          blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
         />
         <div
           onClick={() => shareLinkHandle()}
