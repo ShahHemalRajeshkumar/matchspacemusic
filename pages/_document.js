@@ -58,8 +58,8 @@ export default class CustomDocument extends Document {
                   src: url('../assets/fonts/ms_instruments.woff') format('woff'),
                        url('../assets/fonts/ms_instruments.ttf') format('truetype');
                   size-adjust: 100%;
-                  ascent-override: 85%;
-                  descent-override: 20%;
+                  ascent-override: 90%;
+                  descent-override: 22%;
                   line-gap-override: 0%;
                 }
                 @font-face {
