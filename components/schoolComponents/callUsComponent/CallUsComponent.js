@@ -42,7 +42,7 @@ function CallUsComponent({ organizationData, hidePopup, language }) {
           </div>
         </div>
         <div className='max-w-[100px]'>
-          <Image src={organizationLogo} alt={organizationName} className='object-cover' width={100} height={36} />
+          <Image src={organizationLogo} alt={organizationName} className='object-cover' width={48} height={48} />
         </div>
       </div>
       <p className='pt-3 text-[#000000AD] text-[22px]'>+{formatSwissNumber(contact?.phone)}</p>

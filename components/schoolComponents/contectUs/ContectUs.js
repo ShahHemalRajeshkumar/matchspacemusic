@@ -132,7 +132,7 @@ const ContactForm = ({ organizationData, hidePopup, language, showPopup }) => {
           </div>
         </div>
         <div className='ml-auto'>
-          <img src={organizationLogo} alt={organizationName} className='w-full max-w-[48px] h-[48px] object-cover' />
+          <Image src={organizationLogo} alt={organizationName} className='w-full max-w-[48px] h-[48px] object-cover' width={48} height={48} />
         </div>
       </div>
 
