@@ -3,10 +3,19 @@ const breakpoints = require('./config/breakpoints');
 const safelist = require('./config/safelist');
 
 module.exports = {
-  purge: {
-    content: ['./pages/**/*.{ts,tsx,js,jsx}', './components/**/*.{ts,tsx,js,jsx}'],
-    safelist,
-  },
+  content: [
+    './pages/**/*.{ts,tsx,js,jsx}',
+    './components/**/*.{ts,tsx,js,jsx}',
+    './utils/**/*.{ts,tsx,js,jsx}',
+    './hooks/**/*.{ts,tsx,js,jsx}',
+    './functions/**/*.{ts,tsx,js,jsx}'
+  ],
+  safelist: [
+    ...safelist,
+    { pattern: /^(swiper|mapbox|algolia|instantsearch|ms_|material-icons)/ },
+    { pattern: /^(btn-|text-|bg-|hover:|focus:|active:|group-hover:)/ },
+    { pattern: /^(sm:|md:|lg:|xl:|2xl:)/ }
+  ],
   theme: {
     borderColor: (theme) => ({
       ...theme('colors'),
