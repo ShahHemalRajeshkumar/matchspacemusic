@@ -273,10 +273,11 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
         <Image
           src='/assets/images/schollbg.webp'
           alt='School background'
-          width={1440} // actual container max width
-          height={280} // match your tallest forced height
+          width={1440}
+          height={280}
           className='w-full object-cover rounded-xl m-0 h-[130px] sm:h-[280px]'
-          priority // since it's above the fold
+          priority
+          fetchPriority='high'
         />
         <div
           onClick={() => shareLinkHandle()}
