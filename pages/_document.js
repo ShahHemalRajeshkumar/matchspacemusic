@@ -31,7 +31,7 @@ export default class CustomDocument extends Document {
           <link rel='dns-prefetch' href='//script.hotjar.com' />
           <link rel='dns-prefetch' href='//connect.facebook.net' />
           <link rel='dns-prefetch' href='//universe-static.elfsightcdn.com' />
-
+          <link rel="preload" as="image" href="/assets/images/schollbg.webp" type="image/webp" />
           <link rel='preload' href='https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
           <link rel='preload' href='https://fonts.gstatic.com/s/materialiconsoutlined/v95/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUcel5euIg.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
 
