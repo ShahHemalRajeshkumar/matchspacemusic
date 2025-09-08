@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { useSchoolPage } from '@/utils/context/SchoolPageContext';
 import useWindowSize from 'hooks/useWindowSize';
 import dynamic from 'next/dynamic';
+import Head from "next/head";
 
 const TeacherGalleryPopup = dynamic(() => import('../TeacherInfoPage/TeacherContent/TeacherContentGallery/TeacherGalleryPopup'), { ssr: false });
 const TeacherCallbackPopups = dynamic(() => import('../TeacherInfoPage/TeacherCallbackPopups'), { ssr: false });
@@ -258,6 +259,15 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
   }, [query]);
  
   return (
+    <>
+     <Head>
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/images/schollbg.webp"
+          type="image/webp"
+        />
+      </Head>
     <div>
       <div className='w-full max-w-[1440px] mx-auto  sm:mt-[24.5px] h-[141px] xs:h-[180px] sm:h-[280px]  [&>span]:!h-full pt-4 sm:pt-0 relative rounded-xl px-[8px]'>
         <Image
@@ -310,6 +320,7 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
       )}
       {modalComponent}
     </div>
+    </>
   );
 });
 
