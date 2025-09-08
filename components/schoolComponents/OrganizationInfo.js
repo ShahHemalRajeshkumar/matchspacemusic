@@ -271,13 +271,15 @@ const OrganizationInfo = memo(({ language, organizationData, seoActions = {}, in
     <div>
       <div className='w-full max-w-[1440px] mx-auto  sm:mt-[24.5px] h-[141px] xs:h-[180px] sm:h-[280px]  [&>span]:!h-full pt-4 sm:pt-0 relative rounded-xl px-[8px]'>
         <Image
-          src='/assets/images/schollbg1.webp'
+          src='/assets/images/schollbg.webp'
           alt='School background'
           width={1440}
           height={280}
           className='w-full object-cover rounded-xl m-0 h-[130px] sm:h-[280px]'
           priority
           fetchPriority='high'
+          placeholder="blur" 
+          blurDataURL='/assets/images/schollbg1.jpg'
         />
         <div
           onClick={() => shareLinkHandle()}
